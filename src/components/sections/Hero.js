@@ -100,7 +100,7 @@ const Hero = ({
           >
             <iframe
               style={{ border: "none", height: "600px", width: "100%" }}
-              src="https://zoom.us/wc/9785744719/join?prefer=1&un=TWluZGF1Z2Fz"
+              src="https://us04web.zoom.us/wc/join/6703013138"
               sandbox="allow-forms allow-scripts allow-same-origin"
               allow="microphone; camera"
               title="virtual-nanny"
