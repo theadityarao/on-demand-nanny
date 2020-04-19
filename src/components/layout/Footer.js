@@ -39,13 +39,10 @@ const Footer = ({
             'site-footer-inner',
             topDivider && 'has-top-divider'
           )}>
-          <div className="footer-top space-between text-xxs">
-            <Logo />
-            <FooterSocial />
-          </div>
+    
           <div className="footer-bottom space-between text-xxs invert-order-desktop">
             <FooterNav />
-            <div className="footer-copyright">Made by <a href="https://cruip.com">Cruip</a>. All right reserved</div>
+            <div className="footer-copyright">Made by Team 10 for the COVID-19 Hackathon</div>
           </div>
         </div>
       </div>

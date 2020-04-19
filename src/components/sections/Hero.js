@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import classNames from "classnames";
 import { SectionProps } from "../../utils/SectionProps";
 import ButtonGroup from "../elements/ButtonGroup";
@@ -24,7 +24,7 @@ const Hero = ({
   invertColor,
   ...props
 }) => {
-  // const [videoModalActive, setVideomodalactive] = useState(false);
+  const [videoModalActive, setVideomodalactive] = useState(false);
 
   // const openModal = (e) => {
   //   e.preventDefault();
@@ -35,6 +35,10 @@ const Hero = ({
   //   e.preventDefault();
   //   setVideomodalactive(false);
   // };
+
+const startVideo = ( ) => {
+  setVideomodalactive(true);
+}
 
   const outerClasses = classNames(
     "hero section center-content",
@@ -60,24 +64,25 @@ const Hero = ({
               className="mt-0 mb-16 reveal-from-bottom"
               data-reveal-delay="200"
             >
-              Landing template for{" "}
-              <span className="text-color-primary">startups</span>
+              On Demand{" "}
+              <span className="text-color-primary">Child Care</span>
             </h1>
             <div className="container-xs">
               <p
                 className="m-0 mb-32 reveal-from-bottom"
                 data-reveal-delay="400"
               >
-                Our landing page template works on all devices, so you only have
-                to set it up once, and get beautiful results forever.
+              With the push of a button, find a babysitter your kids love. 
               </p>
               <div className="reveal-from-bottom" data-reveal-delay="600">
-                <ButtonGroup>
+               
+              {!videoModalActive && 
+               <ButtonGroup>
                   <Button
                     tag="a"
                     color="primary"
                     wideMobile
-                    href="https://cruip.com/"
+                    onClick={startVideo}
                   >
                     I need a nanny!
                   </Button>
@@ -85,11 +90,12 @@ const Hero = ({
                     tag="a"
                     color="dark"
                     wideMobile
-                    href="https://github.com/cruip/open-react-template/"
+                    onClick={startVideo}
                   >
                     I'm a nanny and I'm available!
                   </Button>
                 </ButtonGroup>
+                }
               </div>
             </div>
           </div>
@@ -98,13 +104,15 @@ const Hero = ({
             data-reveal-value="20px"
             data-reveal-delay="800"
           >
+
+          { videoModalActive && 
             <iframe
               style={{ border: "none", height: "600px", width: "100%" }}
               src="https://us04web.zoom.us/wc/join/6703013138"
               sandbox="allow-forms allow-scripts allow-same-origin"
               allow="microphone; camera"
               title="virtual-nanny"
-            ></iframe>
+            ></iframe>}
             {/* <a
               data-video="https://player.vimeo.com/video/174002812"
               href="#0"
